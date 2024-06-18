@@ -1,18 +1,18 @@
-# Salesforce DX Project: Next Steps
+# Salesforce Expense Tracker
+Part of the Salesforce Mini Hacks 2023
 
-Now that you’ve created a Salesforce DX project, what’s next? Here are some documentation resources to get you started.
+Mega Hack
 
-## How Do You Plan to Deploy Your Changes?
+In this mega hack, you build an app that lets you track your expenses and visualize them. You will be using a combination of Custom Objects, Flows, Lightning Web Components, and Apex to complete this hack.
 
-Do you want to deploy a set of changes, or create a self-contained application? Choose a [development model](https://developer.salesforce.com/tools/vscode/en/user-guide/development-models).
+Requirements
 
-## Configure Your Salesforce DX Project
-
-The `sfdx-project.json` file contains useful configuration information for your project. See [Salesforce DX Project Configuration](https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_ws_config.htm) in the _Salesforce DX Developer Guide_ for details about this file.
-
-## Read All About It
-
-- [Salesforce Extensions Documentation](https://developer.salesforce.com/tools/vscode/)
-- [Salesforce CLI Setup Guide](https://developer.salesforce.com/docs/atlas.en-us.sfdx_setup.meta/sfdx_setup/sfdx_setup_intro.htm)
-- [Salesforce DX Developer Guide](https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_intro.htm)
-- [Salesforce CLI Command Reference](https://developer.salesforce.com/docs/atlas.en-us.sfdx_cli_reference.meta/sfdx_cli_reference/cli_reference.htm)
+    Create an object to store expenses and load the data from the below CSV file into the object.
+        CSV file: Mock Expense Data.csv (provided)
+        Hint: (Use the Custom Object from Spreadsheet feature. )[https://help.salesforce.com/s/articleView?language=en_US&id=sf.dev_objectcreate_task_lex_from_spreadsheet.htm&type=5]
+    Create a flow that lets users select a Start Date and an End Date on the first screen, both of which are required.
+    The next screen must show a Lightning Web Component that displays a donut chart using the (Chart.js library)[https://www.chartjs.org/docs/latest/]. You can download chartJS.js file from LWC Recipes. The donut chart must show the Total amount spent grouped by Expense Type for the duration selected in the previous screen.
+        Hint: Refer to the libsChartjs recipe for guidance on using the Chart.js library
+    The component must also display a button called “Save as Image” that saves the chart as an image in Salesforce Files, with the nameExpenses-[startdate]-[enddate].png. Use the format yyyy_MM_dd for the dates in the name of the image.
+        Hint: Use the built-in toBase64Image function of the Chart.js library
+        Hint: Use the ContentVersion object to store the image in Salesforce Files.
